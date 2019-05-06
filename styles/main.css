@@ -1,0 +1,14 @@
+a {
+	cursor: pointer;
+}
+
+.launcher-page-icon {
+	width: 50px;
+	border-radius: 5px;
+}
+
+
+.launcher-page .btn:not(.selected), 
+.launcher-page img:not(.selected) {
+	opacity: .4;
+}

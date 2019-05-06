@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="appetizePages" class="no-js">
+<head>
+    <base href="/Users/nshinn/Desktop/Appetize Builds/AppetizeLaunchPage/"/>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#222222" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.min.css" />
+    <!-- endbower -->
+    <style type="text/css">
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/main.css" />
+    <meta name="fragment" content="!">
+</head>
+
+<body class="not-iframe launcher-page" ng-controller="SampleCtrl">
+    <div class="container text-center" ng-show="appName" ng-cloak>
+        <div class="row">
+            <div class="col-md-3 text-left">
+                <p>
+                    <h4>App</h4>
+                    <!-- TODO: Add other eCOA Apps -->
+                    <a ng-click="updateField('appName', 'PatientCloud');"><img class="launcher-page-icon" src="images/app_icon.png" ng-class="{selected : appName == 'PatientCloud'}"/></a>
+                </p>
+                <br/>
+                <p>
+                    <h4>Platform</h4>
+                    <a ng-model="platform" btn-radio="ios" ng-click="updateField('platform', 'ios');" class="btn btn-info" ng-class="{selected : platform == 'ios'}">iOS</a>
+                    <a ng-model="platform" btn-radio="android" ng-click="updateField('platform', 'android');" class="btn btn-info" ng-class="{selected : platform == 'android'}">Android</a>
+                </p>
+                <br/>
+                <p>
+                    <h4>Device</h4>
+                    <a ng-model="deviceType" btn-radio="phone" ng-click="updateField('deviceType', 'phone');" class="btn btn-success" ng-class="{selected : deviceType == 'phone'}">Phone</a>
+                    <a ng-model="deviceType" btn-radio="tablet" ng-click="updateField('deviceType', 'tablet');" class="btn btn-success" ng-class="{selected : deviceType == 'tablet'}">Tablet</a>
+                </p>
+                <br/>
+                <p>
+                    <h4>Scale</h4>
+                    <input style="max-width: 150px; display: inline-block;" ng-model="scale" type="range" id="weight" min=0 ng-value=.75 max=1 step=.05>
+                </p>
+                <br/>
+                <p>
+                    <div ng-cloak ng-show="sessionActive">
+                        <a class="btn btn-danger btn-lg selected" ng-click="endSession();">End Session</a>
+                    </div>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <iframe class="center-block" ng-if="apps[platform][deviceType]" src="{{trustSrc('https://appetize.io/embed/' + apps[platform][deviceType] + '?device=' + devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=12.2')}}" width="900px" height="1300px" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/toastr/toastr.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controller.js"></script>
+</body>
+
+</html>
