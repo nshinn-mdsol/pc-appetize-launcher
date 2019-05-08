@@ -1,5 +1,5 @@
 angular.module('appetizePages')
-.controller('mainController', function($scope, $rootScope, $http, $location, $sce, $window) {
+.controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
 	toastr.options.timeOut = 5000;
     toastr.options.positionClass = 'toast-top-center';
