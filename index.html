@@ -24,7 +24,7 @@
     <link rel="icon" href="images/pug.png" type="image/x-icon" />
 </head>
 
-<body class="not-iframe launcher-page" ng-controller="SampleCtrl">
+<body class="not-iframe launcher-page" ng-controller="mainController">
     <div class="container text-center" ng-show="appName" ng-cloak>
         <div class="row">
             <div class="col-md-3 text-left">
@@ -39,27 +39,30 @@
                     <a ng-model="platform" btn-radio="ios" ng-click="updateField('platform', 'ios');" class="btn btn-info" ng-class="{selected : platform == 'ios'}">iOS</a>
                     <a ng-model="platform" btn-radio="android" ng-click="updateField('platform', 'android');" class="btn btn-info" ng-class="{selected : platform == 'android'}">Android</a>
                 </p>
-                <br/>
                 <p>
                     <h4>Device</h4>
                     <a ng-model="deviceType" btn-radio="phone" ng-click="updateField('deviceType', 'phone');" class="btn btn-success" ng-class="{selected : deviceType == 'phone'}">Phone</a>
                     <a ng-model="deviceType" btn-radio="tablet" ng-click="updateField('deviceType', 'tablet');" class="btn btn-success" ng-class="{selected : deviceType == 'tablet'}">Tablet</a>
                 </p>
-                <br/>
                 <p>
                     <h4>Scale</h4>
                     <input style="max-width: 150px; display: inline-block;" ng-model="scale" type="range" id="weight" min=0 ng-value=.75 max=1 step=.05>
                 </p>
-                <br/>
                 <p>
                     <div ng-cloak ng-show="sessionActive">
                         <a class="btn btn-danger btn-lg selected" ng-click="endSession();">End Session</a>
                     </div>
                 </p>
+                <hr>
+                  <div ng-cloak ng-show="sessionActive">
+                    <h4>Options</h4>
+                    <a class="btn btn-primary selected" ng-click="saveScreenshot();">Save Screenshot</a>
+                  </div>
+                </hr>
             </div>
             <div class="col-md-9 text-left">
               <br>
-              <h4>Patient Cloud v2019.3.0</h4>
+              <h4>Patient Cloud v2019.3.0 ({{ currentDevice }})</h4>
                 <iframe class="center-block" ng-if="apps[platform][deviceType]" src="{{trustSrc('https://appetize.io/embed/' + apps[platform][deviceType] + '?device=' + devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=12.2')}}" width="900px" height="1300px" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>

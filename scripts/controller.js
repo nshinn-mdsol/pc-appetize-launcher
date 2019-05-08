@@ -1,6 +1,5 @@
 angular.module('appetizePages')
-.controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
-	console.log('SampleCtrl loaded');
+.controller('mainController', function($scope, $rootScope, $http, $location, $sce, $window) {
 
 	toastr.options.timeOut = 5000;
     toastr.options.positionClass = 'toast-top-center';
@@ -34,10 +33,22 @@ angular.module('appetizePages')
 		}
 	};
 
+	$scope.deviceNames = {
+		'ios' : {
+			'phone' : 'iPhone 8 Plus',
+			'tablet' : 'iPad Air 2'
+		},
+		'android' : {
+			'phone' : 'Nexus 5',
+			'tablet' : 'Nexus 9'
+		}
+	};
+
 	$scope.appName = 'PatientCloud';
 	$scope.deviceType = 'phone';
 	$scope.platform = 'ios';
 	$scope.sessionActive;
+	$scope.currentDevice = 'iPhone 8 Plus';
 
 	$scope.$watch("scale", function(newValue, oldValue) {
 		if(newValue === oldValue)
@@ -54,6 +65,7 @@ angular.module('appetizePages')
 		if (!$scope.sessionActive || confirm('This will restart your session. Do you want to continue?')) {
 			$scope[field] = newValue;
 			$scope.sessionActive = false;
+			$scope.currentDevice = $scope.deviceNames[$scope.platform][$scope.deviceType]
 		}
 		toastr.remove();
 	}
@@ -67,6 +79,15 @@ angular.module('appetizePages')
 		}
 	}
 
+	$scope.saveScreenshot = function() {
+		if (document && document.querySelector('iframe') && document.querySelector('iframe').contentWindow) {
+			var iframe = document.querySelector('iframe');
+			console.log('screenshot requested');
+			iframe.contentWindow.postMessage('getScreenshot', '*');
+	    iframe.contentWindow.postMessage('saveScreenshot', '*');
+		}
+	}
+
 	var messageEventHandler = function(event) {
 		if (event.data == 'appLaunch') {
 			$scope.sessionActive = true;
@@ -75,6 +96,11 @@ angular.module('appetizePages')
 			});
 		} else if (event.data == 'sessionEnded') {
 			$scope.sessionActive = false;
+			$rootScope.$apply(function() {
+				// do nothing
+			});
+		} else if (event.data == 'screenshot') {
+			$scope.sessionActive = true;
 			$rootScope.$apply(function() {
 				// do nothing
 			});
