@@ -13,12 +13,12 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : 'cuy1xcdtdupmmyn67uvvm8mb70',
-			'tablet' : '867ndx6fnc16hee6te2e0y1430'
+			'phone' : 'fyrthq9qvdetu7whvw8tzrewdm',
+			'tablet' : '9k64d0p4zc1v51em37zav71mb8'
 		},
 		'android' : {
-			'phone' : 'mev1azmjrdpagnu5zz89n9vyx0',
-			'tablet' : 'mev1azmjrdpagnu5zz89n9vyx0'
+			'phone' : 'byw1w2ybwbvgz9je3p6cj513k0',
+			'tablet' : 'byw1w2ybwbvgz9je3p6cj513k0'
 		}
 	};
 
