@@ -49,6 +49,7 @@ angular.module('appetizePages')
 	$scope.platform = 'ios';
 	$scope.sessionActive;
 	$scope.currentDevice = 'iPhone 8 Plus';
+	$scope.currentLangauge = 'en';
 
 	$scope.$watch("scale", function(newValue, oldValue) {
 		if(newValue === oldValue)
@@ -85,6 +86,18 @@ angular.module('appetizePages')
 			console.log('screenshot requested');
 			iframe.contentWindow.postMessage('getScreenshot', '*');
 	    iframe.contentWindow.postMessage('saveScreenshot', '*');
+		}
+	}
+
+	$scope.changeLanguage = function() {
+		if (!$scope.sessionActive || confirm('This will restart your session. Do you want to continue?')) {
+			if (document && document.querySelector('iframe') && document.querySelector('iframe').contentWindow) {
+				var iframe = document.querySelector('iframe');
+				console.log('language change requested');
+				$scope.currentLangauge = ''+document.getElementsByName('language_code')[0].value;
+				console.log($scope.currentLangauge)
+				iframe.contentWindow.postMessage('restartApp', '*');
+			}
 		}
 	}
 

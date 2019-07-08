@@ -56,14 +56,21 @@
                 <hr>
                   <div ng-cloak ng-show="sessionActive">
                     <h4>Options</h4>
+                    <h6>Take Screenshot</h6>
                     <a class="btn btn-primary selected" ng-click="saveScreenshot();">Save Screenshot</a>
+                  </div>
+                </br>
+                  <div ng-cloak ng-show="sessionActive">
+                    <h6>Change Language (<a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>)</h6>
+                    <input type="text" name="language_code" value="en">
+                    <a class="btn btn-primary selected" ng-click="changeLanguage();">Change Language</a>
                   </div>
                 </hr>
             </div>
             <div class="col-md-9 text-left">
               <br>
-              <h4>Patient Cloud v2019.4.0 ({{ currentDevice }})</h4>
-                <iframe class="center-block" ng-if="apps[platform][deviceType]" src="{{trustSrc('https://appetize.io/embed/' + apps[platform][deviceType] + '?device=' + devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=12.2')}}" width="900px" height="1300px" frameborder="0" scrolling="no"></iframe>
+              <h4>Patient Cloud v2019.4.0 ({{ currentDevice }}, {{ currentLangauge }})</h4>
+                <iframe class="center-block" ng-if="apps[platform][deviceType]" src="{{trustSrc('https://appetize.io/embed/' + apps[platform][deviceType] + '?device=' + devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=12.2&language=' + currentLangauge)}}" width="900px" height="1300px" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
     </div>
