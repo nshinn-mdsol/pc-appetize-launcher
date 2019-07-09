@@ -83,11 +83,6 @@
     <script src="bower_components/toastr/toastr.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controller.js"></script>
-    <script>
-      // Prevent timeout by sending heartbeat every 2 minutes
-      function sendHeartBeat() {document.querySelector('iframe').contentWindow.postMessage('heartbeat', '*');}
-      setInterval(sendHeartBeat, 90000);
-    </script>
 </body>
 
 </html>
