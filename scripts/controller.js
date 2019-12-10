@@ -13,8 +13,8 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : '6cw2nj83xb7z69bj17qdd1fgdg',
-			'tablet' : '2auq40dxn0qt4r932v53gue5cr'
+			'phone' : '1zxhwvectp4t7qu16tq56f8q4w',
+			'tablet' : '2ubbzdjm1jm5ugc75w79h0kj44'
 		},
 		'android' : {
 			'phone' : 'byw1w2ybwbvgz9je3p6cj513k0',
