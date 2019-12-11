@@ -2,7 +2,7 @@ angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
 	toastr.options.timeOut = 5000;
-    toastr.options.positionClass = 'toast-top-center';
+    	toastr.options.positionClass = 'toast-top-center';
 
 	$scope.device = 'iphone8plus';
 	$scope.publicKey = 'cuy1xcdtdupmmyn67uvvm8mb70';
@@ -17,8 +17,8 @@ angular.module('appetizePages')
 			'tablet' : '2ubbzdjm1jm5ugc75w79h0kj44'
 		},
 		'android' : {
-			'phone' : 'byw1w2ybwbvgz9je3p6cj513k0',
-			'tablet' : 'byw1w2ybwbvgz9je3p6cj513k0'
+			'phone' : 'ackad5u6f0b7db48jjvwygxdnr',
+			'tablet' : 'ackad5u6f0b7db48jjvwygxdnr'
 		}
 	};
 
@@ -45,6 +45,7 @@ angular.module('appetizePages')
 	};
 
 	$scope.appName = 'PatientCloud';
+	$scope.currentVersion = 'iOS vXXXX.X.X'
 	$scope.deviceType = 'phone';
 	$scope.platform = 'ios';
 	$scope.sessionActive;
@@ -67,6 +68,11 @@ angular.module('appetizePages')
 			$scope[field] = newValue;
 			$scope.sessionActive = false;
 			$scope.currentDevice = $scope.deviceNames[$scope.platform][$scope.deviceType]
+			if ($scope.platform == 'ios') {
+				$scope.currentVersion = 'iOS v2019.6.0'
+			} else {
+				$scope.currentVersion = 'Android v2019.5.0'
+			}
 		}
 		toastr.remove();
 	}
