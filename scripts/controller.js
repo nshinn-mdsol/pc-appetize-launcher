@@ -1,5 +1,8 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
+	
+	const IOS_VERSION = 'iOS v2019.6.0';
+	const ANDROID_VERSION = 'Android v2019.5.0';
 
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
@@ -45,7 +48,7 @@ angular.module('appetizePages')
 	};
 
 	$scope.appName = 'PatientCloud';
-	$scope.currentVersion = 'iOS vXXXX.X.X'
+	$scope.currentVersion = IOS_VERSION;
 	$scope.deviceType = 'phone';
 	$scope.platform = 'ios';
 	$scope.sessionActive;
@@ -69,9 +72,9 @@ angular.module('appetizePages')
 			$scope.sessionActive = false;
 			$scope.currentDevice = $scope.deviceNames[$scope.platform][$scope.deviceType]
 			if ($scope.platform == 'ios') {
-				$scope.currentVersion = 'iOS v2019.6.0'
+				$scope.currentVersion = IOS_VERSION;
 			} else {
-				$scope.currentVersion = 'Android v2019.5.0'
+				$scope.currentVersion = ANDROID_VERSION;
 			}
 		}
 		toastr.remove();
