@@ -20,8 +20,8 @@ angular.module('appetizePages')
 			'tablet' : '2ubbzdjm1jm5ugc75w79h0kj44'
 		},
 		'android' : {
-			'phone' : 'ackad5u6f0b7db48jjvwygxdnr',
-			'tablet' : 'ackad5u6f0b7db48jjvwygxdnr'
+			'phone' : '6xd5u2eb9m81n14b30v4p49wa8',
+			'tablet' : '6xd5u2eb9m81n14b30v4p49wa8'
 		}
 	};
 
