@@ -54,6 +54,8 @@ angular.module('appetizePages')
 	$scope.sessionActive;
 	$scope.currentDevice = 'iPhone 8 Plus';
 	$scope.currentLangauge = 'en';
+	
+	$scope.logSrc = "";
 
 	$scope.$watch("scale", function(newValue, oldValue) {
 		if(newValue === oldValue)
@@ -76,7 +78,7 @@ angular.module('appetizePages')
 			} else {
 				$scope.currentVersion = ANDROID_VERSION;
 			}
-			document.getElementById("logSrc").href = 'https://appetize.io/app/' + $scope.apps[platform][deviceType] + '?device=' + $scope.devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
+			$scope.logSrc = 'https://appetize.io/app/' + $scope.apps[platform][deviceType] + '?device=' + $scope.devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
 		}
 		toastr.remove();
 	}
