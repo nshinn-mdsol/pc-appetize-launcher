@@ -66,6 +66,11 @@
                     <a class="btn btn-primary selected" ng-click="changeLanguage();">Change Language</a>
                   </div>
                 </hr>
+                <hr>
+                  <div ng-cloak ng-show="sessionActive">
+                    <h6>Need logs or network proxy? View them <a href="{{trustSrc('https://appetize.io/embed/' + apps[platform][deviceType] + '?device=' + devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + currentLangauge)}}">here</a>.</h6>
+                  </div>
+                </hr>
             </div>
             <div class="col-md-9 text-left">
               <br>
