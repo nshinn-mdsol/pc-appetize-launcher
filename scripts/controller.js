@@ -78,7 +78,7 @@ angular.module('appetizePages')
 			} else {
 				$scope.currentVersion = ANDROID_VERSION;
 			}
-			$scope.logSrc = $scope.apps[platform][deviceType] + '?device=' + $scope.devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
+			$scope.logSrc = $scope.apps[$scope.platform][$scope.deviceType] + '?device=' + $scope.devices[$scope.platform][$scope.deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
 		}
 		toastr.remove();
 	}
