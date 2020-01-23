@@ -1,8 +1,8 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 	
-	const IOS_VERSION = 'iOS v2019.6.0';
-	const ANDROID_VERSION = 'Android v2019.5.0';
+	const IOS_VERSION = 'iOS v2020.1.0';
+	const ANDROID_VERSION = 'Android v2020.1.0';
 
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
@@ -16,12 +16,12 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : '1zxhwvectp4t7qu16tq56f8q4w',
-			'tablet' : '2ubbzdjm1jm5ugc75w79h0kj44'
+			'phone' : '8mvbm8d6qedk110rxj3cxhw98m',
+			'tablet' : '29rzg7mxv6ej5mpt87cn8wuttg'
 		},
 		'android' : {
-			'phone' : '259dqqy4f9effra8pmh4m7ump0',
-			'tablet' : '259dqqy4f9effra8pmh4m7ump0'
+			'phone' : 'y75vmtv4pxhd5n1wg0y3jfzftr',
+			'tablet' : 'y75vmtv4pxhd5n1wg0y3jfzftr'
 		}
 	};
 
