@@ -76,7 +76,7 @@ angular.module('appetizePages')
 			} else {
 				$scope.currentVersion = ANDROID_VERSION;
 			}
-			document.getElementById("logSrc").src = 'https://appetize.io/app/' + $scope.apps[platform][deviceType] + '?device=' + $scope.devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
+			document.getElementById("logSrc").href = 'https://appetize.io/app/' + $scope.apps[platform][deviceType] + '?device=' + $scope.devices[platform][deviceType] + '&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + $scope.currentLangauge;
 		}
 		toastr.remove();
 	}
