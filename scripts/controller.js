@@ -1,14 +1,14 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 	
-	const IOS_VERSION = 'iOS v2020.2.1';
-	const ANDROID_VERSION = 'Android v2020.2.0';
+	const IOS_VERSION = 'iOS v2020.3.0';
+	const ANDROID_VERSION = 'Android v2020.3.1';
 
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
 
 	$scope.device = 'iphone8plus';
-	$scope.publicKey = 'cuy1xcdtdupmmyn67uvvm8mb70';
+	$scope.publicKey = '84ajz70da0ggqma2q3mxreugfm';
 
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -16,12 +16,12 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : '0jpvq36qz90m48eyckrxny9qym',
-			'tablet' : 'e6frjyjgcyy7afhuygfdbk3378'
+			'phone' : '84ajz70da0ggqma2q3mxreugfm',
+			'tablet' : 'ex4uuvfpj0g8rd0t0b2pyfdezr'
 		},
 		'android' : {
-			'phone' : 'ng1pwy0xh7yw9kyvjx4veg437g',
-			'tablet' : 'ng1pwy0xh7yw9kyvjx4veg437g'
+			'phone' : 'r01rg30mrygv288drvrw23fcfr',
+			'tablet' : 'r01rg30mrygv288drvrw23fcfr'
 		}
 	};
 
@@ -55,7 +55,12 @@ angular.module('appetizePages')
 	$scope.currentDevice = 'iPhone 8 Plus';
 	$scope.currentLangauge = 'en';
 	
-	$scope.logSrc = '';
+	$scope.logSrc = 
+		$scope.apps[$scope.platform][$scope.deviceType] + 
+		'?device=' + 
+		$scope.devices[$scope.platform][$scope.deviceType] + 
+		'&scale=75&deviceColor=white&screenOnly=false&centered=true&xdocMsg=true&osVersion=13.3&debug=true&proxy=intercept&language=' + 
+		$scope.currentLangauge;
 
 	$scope.$watch("scale", function(newValue, oldValue) {
 		if(newValue === oldValue)
