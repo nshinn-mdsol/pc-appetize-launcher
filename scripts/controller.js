@@ -2,7 +2,7 @@ angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
 	const IOS_VERSION = 'iOS v2020.5.0';
-	const ANDROID_VERSION = 'Android v2020.5.0';
+	const ANDROID_VERSION = 'Android v2020.6.0';
 
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
@@ -20,8 +20,8 @@ angular.module('appetizePages')
 			'tablet' : '3m23y4bp336cw9dc3bz1a80jkg'
 		},
 		'android' : {
-			'phone' : 'v2h8jmh6htf2t3qtv09yma16jc',
-			'tablet' : 'v2h8jmh6htf2t3qtv09yma16jc'
+			'phone' : 'r2165uywp879jptu1qyg0j31ec',
+			'tablet' : 'r2165uywp879jptu1qyg0j31ec'
 		}
 	};
 
