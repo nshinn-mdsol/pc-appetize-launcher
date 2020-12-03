@@ -1,7 +1,7 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
-	const IOS_VERSION = 'iOS v2020.5.0';
+	const IOS_VERSION = 'iOS v2020.6.0';
 	const ANDROID_VERSION = 'Android v2020.6.0';
 
 	toastr.options.timeOut = 5000;
@@ -9,7 +9,7 @@ angular.module('appetizePages')
 
 	$scope.device = 'iphone8plus';
 	// Include iphone key here; same as ios.phone key
-	$scope.publicKey = '84ajz70da0ggqma2q3mxreugfm';
+	$scope.publicKey = 'vxvrfcq50xafm5efe1hpccrmvg';
 
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -17,7 +17,7 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : 'kv4exg2ry1u89bmu0v8fu1yb6m',
+			'phone' : 'vxvrfcq50xafm5efe1hpccrmvg',
 			'tablet' : 'aye5ndp34veu0nbfegvdqedfxw'
 		},
 		'android' : {
