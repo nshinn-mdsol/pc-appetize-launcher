@@ -8,6 +8,7 @@ angular.module('appetizePages')
     	toastr.options.positionClass = 'toast-top-center';
 
 	$scope.device = 'iphone8plus';
+	// Include iphone key here; same as ios.phone key
 	$scope.publicKey = '84ajz70da0ggqma2q3mxreugfm';
 
 	$scope.trustSrc = function(src) {
@@ -17,7 +18,7 @@ angular.module('appetizePages')
 	$scope.apps = {
 		'ios' : {
 			'phone' : 'kv4exg2ry1u89bmu0v8fu1yb6m',
-			'tablet' : '3m23y4bp336cw9dc3bz1a80jkg'
+			'tablet' : 'aye5ndp34veu0nbfegvdqedfxw'
 		},
 		'android' : {
 			'phone' : 'r2165uywp879jptu1qyg0j31ec',
