@@ -58,7 +58,7 @@ angular.module('appetizePages')
 
 	$scope.osVersions = {
 		'ios' : IOS_OS_VERSION,
-		'android' ANDROID_OS_VERSION
+		'android' : ANDROID_OS_VERSION
 	};
 	
 	$scope.appName = 'PatientCloud';
