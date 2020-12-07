@@ -1,18 +1,25 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
-	const IOS_VERSION = 'iOS v2020.6.0';
-	const ANDROID_VERSION = 'Android v2020.6.0';
+	// ~ Begin Emulator Configs ~ 
 	
+	const IOS_VERSION = 'iOS v2020.6.0';
 	const IOS_OS_VERSION = '14.1'; // iOS 14
+	const IOS_IPHONE_APPETIZE_KEY = 'vxvrfcq50xafm5efe1hpccrmvg';
+	const IOS_IPAD_APPETIZE_KEY = 'aye5ndp34veu0nbfegvdqedfxw';
+	
+	const ANDROID_VERSION = 'Android v2020.6.0';
 	const ANDROID_OS_VERSION = '11.0'; // Android 11
+	const ANDROID_APPETIZE_KEY = 'r2165uywp879jptu1qyg0j31ec';
+	
+	// ~ End Emulator Configs ~
 
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
 
 	$scope.device = 'iphone8plus';
 	// Include iphone key here; same as ios.phone key
-	$scope.publicKey = 'vxvrfcq50xafm5efe1hpccrmvg';
+	$scope.publicKey = IOS_IPHONE_APPETIZE_KEY;
 
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -20,12 +27,12 @@ angular.module('appetizePages')
 
 	$scope.apps = {
 		'ios' : {
-			'phone' : 'vxvrfcq50xafm5efe1hpccrmvg',
-			'tablet' : 'aye5ndp34veu0nbfegvdqedfxw'
+			'phone' : IOS_IPHONE_APPETIZE_KEY,
+			'tablet' : IOS_IPAD_APPETIZE_KEY
 		},
 		'android' : {
-			'phone' : 'r2165uywp879jptu1qyg0j31ec',
-			'tablet' : 'r2165uywp879jptu1qyg0j31ec'
+			'phone' : ANDROID_APPETIZE_KEY,
+			'tablet' : ANDROID_APPETIZE_KEY
 		}
 	};
 
@@ -51,6 +58,11 @@ angular.module('appetizePages')
 		}
 	};
 
+	$scope.osVersions = {
+		'ios' : IOS_OS_VERSION,
+		'android' ANDROID_OS_VERSION
+	};
+	
 	$scope.appName = 'PatientCloud';
 	$scope.currentVersion = IOS_VERSION;
 	$scope.deviceType = 'phone';
