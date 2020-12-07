@@ -1,7 +1,7 @@
 angular.module('appetizePages')
 .controller('SampleCtrl', function($scope, $rootScope, $http, $location, $sce, $window) {
 
-	// ~ Begin Emulator Configs ~ 
+	// Emulator Configs
 	
 	const IOS_VERSION = 'iOS v2020.6.0';
 	const IOS_OS_VERSION = '14.1'; // iOS 14
@@ -12,8 +12,6 @@ angular.module('appetizePages')
 	const ANDROID_OS_VERSION = '11.0'; // Android 11
 	const ANDROID_APPETIZE_KEY = 'r2165uywp879jptu1qyg0j31ec';
 	
-	// ~ End Emulator Configs ~
-
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
 
