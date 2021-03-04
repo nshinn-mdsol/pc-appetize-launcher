@@ -3,14 +3,15 @@ angular.module('appetizePages')
 
 	// Emulator Configs
 	
-	const IOS_VERSION = 'iOS v2020.6.0';
+	// Modify constants below for each release
+	const IOS_VERSION = 'iOS v2021.1.2';
 	const IOS_OS_VERSION = '14.1'; // iOS 14
-	const IOS_IPHONE_APPETIZE_KEY = 'vxvrfcq50xafm5efe1hpccrmvg';
-	const IOS_IPAD_APPETIZE_KEY = 'aye5ndp34veu0nbfegvdqedfxw';
+	const IOS_IPHONE_APPETIZE_KEY = 'vtdbjfva1n39vx0xeg069r3ur8';
+	const IOS_IPAD_APPETIZE_KEY = 'g279h3gwx4rtqmq2jy5n6r5mm8';
 	
-	const ANDROID_VERSION = 'Android v2020.6.0';
+	const ANDROID_VERSION = 'Android v2021.1.1';
 	const ANDROID_OS_VERSION = '11.0'; // Android 11
-	const ANDROID_APPETIZE_KEY = 'r2165uywp879jptu1qyg0j31ec';
+	const ANDROID_APPETIZE_KEY = 'wv03duqzcv4mjm1zuctyh4a2n4';
 	
 	toastr.options.timeOut = 5000;
     	toastr.options.positionClass = 'toast-top-center';
